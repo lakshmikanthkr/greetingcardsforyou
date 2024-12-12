@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+    <!-- Sky Background -->
+    <rect width="1920" height="1080" fill="#1a365d"/>
+    
+    <!-- Snow Ground -->
+    <path d="M0,800 Q480,750 960,800 Q1440,850 1920,800 L1920,1080 L0,1080 Z" fill="#fff"/>
+    
+    <!-- Mountains -->
+    <path d="M0,800 L400,400 L800,800" fill="#d1d5db"/>
+    <path d="M600,800 L1000,300 L1400,800" fill="#9ca3af"/>
+    <path d="M1200,800 L1600,500 L1920,800" fill="#d1d5db"/>
+    
+    <!-- Trees -->
+    <g transform="translate(300,600)">
+        <polygon points="0,100 50,0 100,100" fill="#165B33"/>
+        <rect x="40" y="100" width="20" height="30" fill="#92400e"/>
+    </g>
+    <g transform="translate(500,650)">
+        <polygon points="0,120 60,0 120,120" fill="#165B33"/>
+        <rect x="50" y="120" width="20" height="30" fill="#92400e"/>
+    </g>
+    <g transform="translate(1200,630)">
+        <polygon points="0,100 50,0 100,100" fill="#165B33"/>
+        <rect x="40" y="100" width="20" height="30" fill="#92400e"/>
+    </g>
+    
+    <!-- Cottage -->
+    <g transform="translate(800,600)">
+        <!-- House Body -->
+        <rect x="0" y="50" width="200" height="150" fill="#92400e"/>
+        <!-- Roof -->
+        <polygon points="0,50 100,-20 200,50" fill="#7c2d12"/>
+        <!-- Window -->
+        <rect x="40" y="90" width="40" height="40" fill="#fde68a"/>
+        <rect x="120" y="90" width="40" height="40" fill="#fde68a"/>
+        <!-- Door -->
+        <rect x="85" y="140" width="30" height="60" fill="#7c2d12"/>
+        <!-- Chimney -->
+        <rect x="150" y="0" width="20" height="40" fill="#7c2d12"/>
+    </g>
+</svg> 

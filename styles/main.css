@@ -1,0 +1,350 @@
+:root {
+    --primary: #1a1a1a;
+    --accent: #E63946;
+    --text: #FFFFFF;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --background: #121212;
+    --surface: #1E1E1E;
+    --snow: rgba(255, 255, 255, 0.8);
+    --christmas-red: #ff3b3b;
+    --christmas-green: #2ecc71;
+    --christmas-gold: #ffd700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, 
+        #1e4d40 0%,
+        #1a4438 25%,
+        #163b31 50%,
+        #133228 75%,
+        #0f2920 100%
+    );
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    min-height: 100vh;
+    color: var(--text);
+    position: relative;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Christmas Lights */
+.christmas-lights {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+
+.light-string {
+    height: 50px;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 40px,
+        #222 40px,
+        #222 42px
+    );
+    position: relative;
+}
+
+.light-string::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 20px;
+    bottom: 0;
+    filter: blur(2px);
+    animation: lightUp 2s infinite;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 40px,
+        var(--christmas-red) 40px,
+        var(--christmas-green) 60px,
+        var(--christmas-gold) 80px
+    );
+}
+
+/* Stars Effect */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: transparent;
+    z-index: 1;
+}
+
+.stars::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 50px 160px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: twinkle 4s infinite;
+    opacity: 0.3;
+}
+
+.twinkling {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: transparent;
+    z-index: 1;
+}
+
+/* Enhanced Snowfall */
+.snowfall {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+@keyframes lightUp {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+}
+
+.label {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--text);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.label::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(45deg);
+    animation: shimmer 3s infinite;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+    text-transform: lowercase;
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+    background: linear-gradient(
+        120deg,
+        #ffffff 0%,
+        var(--christmas-gold) 25%,
+        #ffffff 50%,
+        var(--christmas-gold) 75%,
+        #ffffff 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: 
+        float 6s ease-in-out infinite,
+        shine 8s linear infinite;
+    text-shadow: 
+        0 0 10px rgba(255, 215, 0, 0.1),
+        0 0 20px rgba(255, 215, 0, 0.1),
+        0 0 30px rgba(255, 215, 0, 0.1);
+}
+
+h1::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        transparent 40%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 60%,
+        transparent 100%
+    );
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: glitter 4s linear infinite;
+    z-index: 2;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(-1deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(1deg);
+    }
+}
+
+@keyframes shine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+@keyframes glitter {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-bottom: 3rem;
+}
+
+.cta-group {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.cta-button {
+    background: var(--accent);
+    color: var(--text);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(45deg);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(230, 57, 70, 0.3);
+}
+
+.launch-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 1.25rem;
+    }
+    
+    .cta-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+} 
